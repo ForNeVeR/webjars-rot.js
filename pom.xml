@@ -10,24 +10,26 @@
     
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
-    <artifactId>WEBJAR_ID</artifactId>
-    <version>UPSTREAM_VERSION-SNAPSHOT</version>
-    <name>WEBJAR_NAME</name>
-    <description>WebJar for WEBJAR_NAME</description>
+    <artifactId>rot.js</artifactId>
+    <version>0.5.0</version>
+    <name>rot.js</name>
+    <description>WebJar for rot.js</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>UPSTREAM_VERSION</upstream.version>
-        <upstream.url>UPSTREAM_ZIP_URL</upstream.url>
+        <upstream.version>0.5.0</upstream.version>
+        <upstream.url>https://github.com/ondras/rot.js/archive/v0.5.0.zip</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
                 "paths": {
-                    "WEBJAR_ID": "WEBJAR_ID"
+                    "rot.js": "rot.js"
                 },
                 "shim": {
-                    "WEBJAR_ID": ["DEP_ID"]
+                    "rot.js": {
+                        exports: "ROT"
+                    }
                 }
             }
         </requirejs>
@@ -35,34 +37,26 @@
 
     <developers>
         <developer>
-            <id>YOUR_ID</id>
-            <name>YOUR_NAME</name>
-            <email>YOUR_EMAIL</email>
+            <id>ForNeVeR</id>
+            <name>Friedrich von Never</name>
+            <email>friedrich@fornever.me</email>
         </developer>
     </developers>
 
     <licenses>
         <license>
-            <name>UPSTREAM_LICENSE_NAME</name>
-            <url>UPSTREAM_LICENSE_VERSION</url>
+            <name>BSD</name>
+            <url>http://en.wikipedia.org/wiki/BSD_licenses</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
 
     <scm>
-        <url>http://github.com/webjars/WEBJAR_ID</url>
-        <connection>scm:git:https://github.com/webjars/WEBJAR_ID.git</connection>
-        <developerConnection>scm:git:https://github.com/webjars/WEBJAR_ID.git</developerConnection>
+        <url>http://github.com/webjars/rot.js</url>
+        <connection>scm:git:https://github.com/webjars/rot.js.git</connection>
+        <developerConnection>scm:git:https://github.com/webjars/rot.js.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-    
-    <dependencies>
-        <dependency>
-            <groupId>org.webjars</groupId>
-            <artifactId>ANOTHER_WEBJAR_ID</artifactId>
-            <version>ANOTHER_WEBJAR_VERSION</version>
-        </dependency>
-    </dependencies>
     
     <build>
         <plugins>
@@ -82,7 +76,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/SOME_SUBDIR-${upstream.version}" />
+                                    <fileset dir="${project.build.directory}/rot.js-${upstream.version}" />
                                 </move>
                             </target>
                         </configuration>
