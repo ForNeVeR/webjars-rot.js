@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>rot.js</artifactId>
-    <version>0.5.0-SNAPSHOT</version>
+    <version>0.5.0</version>
     <name>rot.js</name>
     <description>WebJar for rot.js</description>
     <url>http://webjars.org</url>
@@ -55,7 +55,7 @@
         <url>http://github.com/webjars/rot.js</url>
         <connection>scm:git:https://github.com/webjars/rot.js.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/rot.js.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>rot.js-0.5.0</tag>
     </scm>
     
     <build>
@@ -76,7 +76,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/rot.js-${upstream.version}" includes="*.js"/>
+                                    <fileset dir="${project.build.directory}/rot.js-${upstream.version}" includes="*.js" />
                                 </move>
                             </target>
                         </configuration>
